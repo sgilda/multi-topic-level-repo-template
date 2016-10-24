@@ -1,9 +1,9 @@
 <title>{MyTitleABookName}</title>
-<productname>{ProductName}</productname>
-<productnumber>{DocInfoProductNumber}</productnumber>
-<subtitle>For Use with {ProductName} {ProductRelease}</subtitle>
+<productname>{ProjectName}</productname>
+<productnumber>{DocInfoProjectNumber}</productnumber>
+<subtitle>For Use with {ProjectName} {ProjectRelease}</subtitle>
 <abstract>
-    <para>This documentation does ABC for {ProductName} {ProductRelease}.</para>
+    <para>This community documentation does ABC for {ProjectName} {ProjectRelease}.</para>
 </abstract>
 <authorgroup>
     <orgname>Red Hat Customer Content Services </orgname>
