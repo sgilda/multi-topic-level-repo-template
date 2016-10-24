@@ -18,12 +18,25 @@
 :DocInfoProductName: my-red-hat-product
 :DocInfoProductNumber: 1.0
 //
-// Book Names: 
-//     Defining the book names in document attributes instead of hard-coding them in 
-//     the master.adoc files and in link references. This makes it easy to change the 
-//     book name if necessary. 
-//     Using the pattern ending in 'BookName' makes it easy to grep for occurrences 
-//     throughout the topics 
+//
+// Community project content attributes
+//
+:ProjectName: My Red Hat Project
+:ProjectShortName: My Project
+:ProjectRelease: 1
+:ProjectVersion: 1.0
+//
+// Community project documentation publishing attributes used in the master-docinfo.xml file
+//
+:DocInfoProjectName: my-red-hat-project
+:DocInfoProjectNumber: 1.0
+//
+// Book Names:
+//     Defining the book names in document attributes instead of hard-coding them in
+//     the master.adoc files and in link references. This makes it easy to change the
+//     book name if necessary.
+//     Using the pattern ending in 'BookName' makes it easy to grep for occurrences
+//     throughout the topics
 //
 :MyTitleABookName: My Title A
 :MyTitleBBookName: My Title B

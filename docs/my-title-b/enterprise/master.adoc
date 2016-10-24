@@ -1,9 +1,9 @@
 include::topics/shared/attributes.adoc[]
 
-:my-title-a:
+:my-title-b:
 :product-build:
 
-= {MyTitleABookName}
+= {MyTitleBBookName}
 
 [[book_a_chapter_1]]
 == Chapter 1
