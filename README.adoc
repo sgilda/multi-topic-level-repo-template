@@ -6,11 +6,27 @@
 :RepoTemplateVersion: 1.0
 :RepoTemplateCodeName: multi-topic-level
 
-# {RepoTemplateCodeName}  version {RepoTemplateVersion} Template Git Repository
+= {RepoTemplateCodeName}  version {RepoTemplateVersion} Template Git Repository
 
 This is a fully-customizable Git repository that can be quickly and easily cloned to begin new documentation projects, or migrate old documentation projects into the repository structure that Content Services is converging on as part of its FY17 goals. 
 
-This repository structure has the following properties:
+== Terminology
+
+This template repository uses the terms below as defined:
+
+title::
+  a _title_ is a _deliverable_, i.e. a piece of content that is publishable using our toolchain. The toolchain refers to an AsciiDoc or DocBook deliverable publishable with it as a _title_, and this repo template adopts the same terminology.
+  FIXME: note that title is also the name of a top-level directory that contains deliverables, each of which is defined by a master.adoc file in <titles>/<title>/<distro> subdirectories, provided the name change from docs -> title happens.
+distro::
+		a _distro_, which is shorthand for "distribution", is similar to the concept of a Linux distro or distribution, which is a customized "spin" of Linux. A _distro_ for our purposes is a certain set of docs that is released under a certain product or project name. FIXME: add example, etc.
+topic::
+		FIXME: add description
+shared::
+  FIXME: add description
+		
+== Properties of *{RepoTemplateCodeName} *
+
+This template repository structure has the following properties:
 
 * It is verified to work with the Tooling team's Docs2Drupal and Docs 2.0 publication systems.
 * It is based on the "library," or "multi-title" repo model, meaning that one or more titles are located in a single Git repository. This repository structure can work with any number of titles, from one to whatever.
@@ -27,7 +43,7 @@ In addition, this repository structure has been designed to work with the follow
 * All content development for any number of titles and distros happens in Gitlab.
 * This repository structure is extremely flexible and should be able to account for any other development models. Contact mailto:dhensley@redhat.com[Silas] if you have any questions about whether this repository structure can work for your project.
 
-## Repository Structure Overview
+== Repository Structure Overview
 
 ----
 ├── README.adoc
@@ -74,13 +90,15 @@ In addition, this repository structure has been designed to work with the follow
     └── scripts
         └── buildGuides.sh
 ----
-## How to Use This Repository Template
+== How to Use This Repository Template
 
 1. Clone this repository:
 
     $ git clone https://github.com/silasrh/multi-topic-level-repo-template.git
     
 2. Delete the `.git` configuration and data directory:
+
+FIXME: add explanation of exactly why we are deleting a .git directory here, because this is potentially a "taboo" act. Or, as Sande suggested, provide the commands to pull this template repo without having to delete it, by setting up a different remote.
 
     $ cd multi-topic-level-repo-template
     $ rm .git -fr
@@ -98,7 +116,7 @@ In addition, this repository structure has been designed to work with the follow
 //// 
 Fix buildGuides.sh to work with multi-topic-level and re-include this info
 
-### Build the Example Books
+=== Build the Example Books
 
 To build all of the example books, open a terminal, navigate to the root directory of this repository, and type the following command:
 
@@ -130,9 +148,11 @@ Copy the structure into your own local repository and make the following changes
 7. When you are ready, run the scripts to build the guides and review the output to make sure it looks correct.
 ////
 
-### {RepoTemplateCodeName} Revision History
+=== {RepoTemplateCodeName} Revision History
 
 1.0::
+  * Terminology defined in README. 
+  * move the `docs/shared` directory to `shared` at the top level in order to flatten the directory structure. Fix symlinks under `my-title-a` and `my-title-b` to point to `shared` directory at the top level.
   * rename `My_Title_A`, `My_Title_B` and `Upstream_1` directories to `my-title-a`, `my-title-b` and `upstream-1` naming patterns to make navigating the Git repo as fast as possible. Thank you, jross, for making the suggestion!
   * `docs/shared/templates/document-attributes.adoc` moved to `docs/shared/attributes.adoc`.
   * all includes of `document-attributes.adoc` changed to correct for new attributes.adoc location.
