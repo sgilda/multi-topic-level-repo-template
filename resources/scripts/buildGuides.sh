@@ -106,5 +106,18 @@ done
 # Return to where we started as a courtesy.
 cd $CURRENT_DIR
 
-# Errors are reported at the book level, so we can just exit here.
+# Report any errors
+echo ""
+if [ "$BUILD_MESSAGE" == "$BUILD_RESULTS" ]; then
+  echo "Build was successful!"
+else
+  echo -e "${RED}$BUILD_MESSAGE${NO_COLOR}"
+  if [ "$LIST_BOOKS" ]; then
+    listvalidbooks
+  else
+    # This is a build error.
+    echo -e "${RED}Please fix all issues before requesting a merge!${NO_COLOR}"
+  fi
+fi
+
 exit;
